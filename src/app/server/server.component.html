@@ -1,0 +1,16 @@
+<button class="btn btn-info" [disabled]="!alloswerver" (click)="oncreateserver()"> New Server</button>
+<h3>this is server component and the Server ID is {{server_id}} and status is {{server_status}}</h3>
+<h1>{{server_avaliavle}}</h1>
+
+<button class="btn btn-warning" [disabled]="server_name==''" (click)="server_name=''">Click me</button>
+<input type="text" [(ngModel)]="server_name">
+<p>{{server_name}}</p>
+
+<h1>ngif example</h1>
+<button class="btn btn-success" (click)="oncreateserver1()">Press me</button>
+<p *ngIf="serveridcreated;else serverids">  Server id is {{server_id}}</p>
+<ng-template #serverids>
+<p>
+    there is  no server id
+</p>
+</ng-template>
